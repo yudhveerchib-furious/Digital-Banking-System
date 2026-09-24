@@ -1,25 +1,10 @@
-version: '3.8'
-
 services:
-
 
   redis:
     image: redis:latest
     container_name: redis
     ports:
       - "6379:6379"
-    networks:
-      - banking-network
-
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
     networks:
       - banking-network
 
@@ -31,7 +16,6 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     networks:
       - banking-network
-
 
   kafka:
     image: confluentinc/cp-kafka:7.4.0
@@ -50,9 +34,6 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     networks:
       - banking-network
-
-volumes:
-  mysql-data:
 
 networks:
   banking-network:
