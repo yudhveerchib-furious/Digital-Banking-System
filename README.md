@@ -33,8 +33,6 @@ This project solves this problem using:
 * **Fraud Detection**
 * **OTP Verification**
 * **Payment Gateway Integration**
-* **API Gateway**
-* **Rate Limiting**
 
 ---
 
